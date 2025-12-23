@@ -1,434 +1,428 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Rajpreet Chahal, Ph.D. | Portfolio</title>
 <style>
-        :root {
-            --slate-900: #0f172a;
-            --slate-700: #334155;
-            --slate-100: #f1f5f9;
-            --blue-600: #2563eb;
-            --blue-50: #eff6ff;
-            --white: #ffffff;
-            --border: #e2e8f0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: var(--slate-900);
-            line-height: 1.5;
-        }
-
-        /* Mobile-First Layout */
-        .page-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            min-height: 100vh;
-        }
-
-        /* Professional Header */
-        header {
-            background: var(--slate-900);
-            color: var(--white);
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* Responsive Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        nav a {
-            padding: 1rem;
-            text-decoration: none;
-            color: var(--slate-700);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-
-        nav a:hover { color: var(--blue-600); }
-
-        /* Main Content Grid */
-        main { padding: 1.5rem; }
-
-        section { margin-bottom: 3.5rem; }
-
-        h2 {
-            font-size: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--blue-600);
-            border-bottom: 2px solid var(--blue-50);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Flexible Grid for Mobile/Desktop */
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .card-grid { grid-template-columns: repeat(2, 1fr); }
-            header h1 { font-size: 2.75rem; }
-        }
-
-        /* Interactive Card Aesthetic */
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            background: var(--white);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:active { transform: scale(0.98); }
-
-        .card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--slate-900);
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--slate-700);
-            margin-bottom: 1rem;
-        }
-
-        /* Tags */
-        .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .tag {
-            background: var(--blue-50);
-            color: var(--blue-600);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-            background: var(--slate-100);
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
-
-        .stat-item { text-align: center; }
-        .stat-value { font-size: 1.75rem; font-weight: 800; color: var(--blue-600); display: block; }
-        .stat-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--slate-700); }
-
-        /* Experience Timeline */
-        .timeline-item {
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--blue-600);
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            background: var(--blue-600);
-            border-radius: 50%;
-        }
-
-        .timeline-year { font-weight: 800; font-size: 0.8rem; color: var(--blue-600); }
-        .timeline-title { font-weight: 700; font-size: 1.1rem; }
-
-        footer {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            border-top: 1px solid var(--border);
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-    
-        /* Expandable cards (click to reveal details) */
-        .card { cursor: pointer; }
-        .card:focus { outline: 3px solid rgba(37, 99, 235, 0.35); outline-offset: 2px; }
-        .card-details {
-            display: none;
-            margin-top: 0.85rem;
-            padding-top: 0.85rem;
-            border-top: 1px solid var(--border);
-        }
-        .card.expanded .card-details { display: block; }
-        .card-meta { font-size: 0.78rem; color: #64748b; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
-
-        /* Denser, more matrix-like tiles */
-        section { margin-bottom: 2.5rem; }
-        .card { padding: 1.05rem; }
-        .card p { margin-bottom: 0.7rem; }
-        .card-grid { grid-template-columns: 1fr; }
-        @media (min-width: 430px) {
-            .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        }
-        .tag { white-space: normal; overflow-wrap: anywhere; }
-        .tag-list { flex-wrap: wrap; }
-        html, body { overflow-x: hidden; }
-
-        /* Section intro */
-        .section-intro { font-size: 1.0rem; color: var(--slate-700); margin: 0 0 1rem 0; }
-
-        /* Controls */
-        .controls { display:flex; gap:0.6rem; flex-wrap:wrap; margin: 0.75rem 0 1.25rem; }
-        .btn {
-            border: 1px solid var(--border);
-            background: var(--white);
-            color: var(--slate-700);
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 0.55rem 0.75rem;
-            border-radius: 10px;
-        }
-        .btn:active { transform: scale(0.98); }
-
-    
-
-/* -------- Theme Variables + Toggle -------- */
-:root{
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --border2: #e2e8f0;
-  --header: #0f172a;
-  --nav: #ffffff;
-  --navText: #334155;
-  --h2: #2563eb;
-  --h2Border: #eff6ff;
-  --cardBg: #ffffff;
-  --cardBorder: #e2e8f0;
-  --footerText: #64748b;
-  --hintText: #94a3b8;
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e2e8f0;
+    --header: #0f172a;
+    --nav: #ffffff;
+    --navText: #334155;
+    --accent: #2563eb;
+    --accentLight: #eff6ff;
+    --footerText: #64748b;
+    --hintText: #94a3b8;
+    --sec1: #f1f7ff;
+    --sec2: #f1fbfb;
+    --sec3: #f3fbf5;
+    --sec4: #faf5ff;
+    --secBorder: rgba(15,23,42,0.06);
 }
 
-/* Dark theme activated via data-theme="dark" on html */
-html[data-theme="dark"]{
-  --bg: #020617;
-  --surface: #020617;
-  --text: #e5e7eb;
-  --muted: #cbd5e1;
-  --border2: #1e293b;
-  --header: #020617;
-  --nav: #020617;
-  --navText: #cbd5f5;
-  --h2: #60a5fa;
-  --h2Border: #1e3a8a;
-  --cardBg: #020617;
-  --cardBorder: #1e293b;
-  --footerText: #94a3b8;
-  --hintText: #94a3b8;
+html[data-theme="dark"] {
+    --bg: #020617;
+    --surface: #020617;
+    --text: #e5e7eb;
+    --muted: #cbd5e1;
+    --border: #1e293b;
+    --header: #020617;
+    --nav: #020617;
+    --navText: #cbd5f5;
+    --accent: #60a5fa;
+    --accentLight: #1e3a8a;
+    --footerText: #94a3b8;
+    --hintText: #94a3b8;
+    --sec1: rgba(96,165,250,0.10);
+    --sec2: rgba(34,211,238,0.10);
+    --sec3: rgba(34,197,94,0.10);
+    --sec4: rgba(192,132,252,0.10);
+    --secBorder: rgba(226,232,240,0.08);
 }
 
-body{ background-color: var(--bg) !important; color: var(--text) !important; }
-.page-container{ background: var(--surface) !important; }
-header{ background: var(--header) !important; border-bottom: 1px solid var(--border2); }
-.subtitle{ color: var(--hintText) !important; }
-nav{ background: var(--nav) !important; border-bottom: 1px solid var(--border2) !important; }
-nav a{ color: var(--navText) !important; }
-nav a:hover{ color: var(--h2) !important; }
-h2{ color: var(--h2) !important; border-bottom: 2px solid var(--h2Border) !important; }
-.section-intro{ color: var(--muted) !important; }
-.card{ background: var(--cardBg) !important; border: 1px solid var(--cardBorder) !important; }
-.card h4{ color: var(--text) !important; }
-.card p{ color: var(--muted) !important; }
-footer{ color: var(--footerText) !important; border-top: 1px solid var(--border2) !important; }
-
-/* Subtle interactivity hint in both themes */
-.card::after{ color: var(--hintText) !important; }
-
-/* Toggle button */
-.theme-toggle{
-  position: fixed;
-  right: 14px;
-  bottom: 14px;
-  z-index: 1000;
-  border: 1px solid var(--border2);
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 800;
-  font-size: 0.8rem;
-  padding: 0.55rem 0.75rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
-.theme-toggle:active{ transform: scale(0.98); }
 
-/* -------- Section Theming -------- */
-.section-alt-1 { background: rgba(37,99,235,0.04); }
-.section-alt-2 { background: rgba(14,116,144,0.05); }
-.section-alt-3 { background: rgba(22,101,52,0.05); }
-.section-alt-4 { background: rgba(126,34,206,0.05); }
+html, body {
+    overflow-x: hidden;
+}
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: var(--header);
+    color: #ffffff;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--hintText);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.header-contact {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.header-contact a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.header-contact a:hover {
+    color: #bfdbfe;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    header h1 { font-size: 2.75rem; }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background: var(--nav);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav a {
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--navText);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Main Content */
+main {
+    padding: 1.5rem;
+}
+
+/* Sections */
 section {
-  padding: 2.2rem 1.5rem;
-  border-radius: 16px;
-  margin-bottom: 2.5rem;
+    padding: 2.2rem 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
 }
 
-/* -------- Section header accent colors + marker line -------- */
-.section-alt-1 h2 { color:#2563eb !important; border-bottom: 2px solid rgba(37,99,235,0.25) !important; }
-.section-alt-2 h2 { color:#0e7490 !important; border-bottom: 2px solid rgba(14,116,144,0.25) !important; }
-.section-alt-3 h2 { color:#166534 !important; border-bottom: 2px solid rgba(22,101,52,0.25) !important; }
-.section-alt-4 h2 { color:#7e22ce !important; border-bottom: 2px solid rgba(126,34,206,0.25) !important; }
+.section-alt-1 { background: var(--sec1); border: 1px solid var(--secBorder); }
+.section-alt-2 { background: var(--sec2); border: 1px solid var(--secBorder); }
+.section-alt-3 { background: var(--sec3); border: 1px solid var(--secBorder); }
+.section-alt-4 { background: var(--sec4); border: 1px solid var(--secBorder); }
 
-h2{
-  position: relative;
-  padding-left: 12px;
-}
-h2::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0.2rem;
-  width:4px;
-  height:1.15rem;
-  border-radius: 999px;
-  background: currentColor;
-  opacity: 0.65;
+h2 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accentLight);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 12px;
 }
 
-
-/* ===== Portfolio vNext: tighter, director-level framing ===== */
-
-/* Section backgrounds tuned for light + dark */
-:root{
-  --sec1: #f1f7ff; /* blue tint */
-  --sec2: #f1fbfb; /* teal tint */
-  --sec3: #f3fbf5; /* green tint */
-  --sec4: #faf5ff; /* purple tint */
-  --secBorder: rgba(15,23,42,0.06);
-}
-html[data-theme="dark"]{
-  --sec1: rgba(96,165,250,0.10);
-  --sec2: rgba(34,211,238,0.10);
-  --sec3: rgba(34,197,94,0.10);
-  --sec4: rgba(192,132,252,0.10);
-  --secBorder: rgba(226,232,240,0.08);
+h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 4px;
+    height: 1.15rem;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.65;
 }
 
-.section-alt-1{ background: var(--sec1) !important; border: 1px solid var(--secBorder); }
-.section-alt-2{ background: var(--sec2) !important; border: 1px solid var(--secBorder); }
-.section-alt-3{ background: var(--sec3) !important; border: 1px solid var(--secBorder); }
-.section-alt-4{ background: var(--sec4) !important; border: 1px solid var(--secBorder); }
+.section-alt-1 h2 { color: #2563eb; border-bottom-color: rgba(37,99,235,0.25); }
+.section-alt-2 h2 { color: #0e7490; border-bottom-color: rgba(14,116,144,0.25); }
+.section-alt-3 h2 { color: #166534; border-bottom-color: rgba(22,101,52,0.25); }
+.section-alt-4 h2 { color: #7e22ce; border-bottom-color: rgba(126,34,206,0.25); }
 
-/* Value prop block */
-.value-prop{
-  font-size: 1.02rem;
-  color: var(--muted);
-  margin: 0.35rem 0 1rem 0;
-}
-.value-prop strong{ color: var(--text); }
-
-/* Reduce visual clutter in overview */
-#overview .controls{ margin-top: 0.85rem; }
-#overview a{ font-weight: 800; }
-
-/* Card meta emphasis */
-.card-meta{
-  letter-spacing: 0.06em;
+.section-intro {
+    font-size: 1.0rem;
+    color: var(--muted);
+    margin: 0 0 1rem 0;
 }
 
-/* Back to top */
-.back-to-top{
-  position: fixed;
-  left: 14px;
-  bottom: 14px;
-  z-index: 1000;
-  border: 1px solid var(--border2);
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 800;
-  font-size: 0.8rem;
-  padding: 0.55rem 0.75rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-  display: none;
+.value-prop {
+    font-size: 1.02rem;
+    color: var(--muted);
+    margin: 0.35rem 0 1rem 0;
 }
-.back-to-top:active{ transform: scale(0.98); }
-.back-to-top.show{ display: inline-flex; align-items:center; gap:0.35rem; }
 
-/* Make nav a bit more “architect-y” */
-nav a{ text-transform: none !important; }
-
-/* ===== Consistent tag styling across all tiles ===== */
-.tag-list { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.6rem; }
-.tag{
-  display:inline-flex;
-  align-items:center;
-  border: 1px solid rgba(15,23,42,0.10);
-  background: rgba(37,99,235,0.08);
-  color: var(--h2);
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.28rem 0.55rem;
-  border-radius: 8px;
-  line-height: 1;
+.value-prop strong {
+    color: var(--text);
 }
-html[data-theme="dark"] .tag{
-  border: 1px solid rgba(226,232,240,0.12);
-  background: rgba(96,165,250,0.16);
+
+.value-prop a {
+    color: #f472b6;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.value-prop a:hover {
+    color: #f9a8d4;
+}
+
+html[data-theme="dark"] .value-prop a {
+    color: #c084fc;
+}
+
+html[data-theme="dark"] .value-prop a:hover {
+    color: #d8b4fe;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 430px) {
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Cards */
+.card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.05rem;
+    background: var(--surface);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 2px;
+}
+
+.card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+}
+
+.card-meta {
+    font-size: 0.78rem;
+    color: var(--hintText);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.card-details {
+    display: none;
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+
+.card.expanded .card-details {
+    display: block;
+}
+
+.card::after {
+    color: var(--hintText);
+}
+
+/* Tags */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(15,23,42,0.10);
+    background: rgba(37,99,235,0.08);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.28rem 0.55rem;
+    border-radius: 8px;
+    line-height: 1;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+html[data-theme="dark"] .tag {
+    border: 1px solid rgba(226,232,240,0.12);
+    background: rgba(96,165,250,0.16);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin: 0.75rem 0 1.25rem;
+}
+
+#overview .controls {
+    margin-top: 0.85rem;
+}
+
+#overview a {
+    font-weight: 800;
+}
+
+.btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Tool Columns */
+.tool-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .tool-columns { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Publications: single wide card */
-#publications .card-grid { grid-template-columns: 1fr !important; }
-#publications .card { grid-column: 1 / -1; }
-
-/* Scientific computing section: tighten lists */
-.tool-columns{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+#publications .card-grid {
+    grid-template-columns: 1fr;
 }
-@media (min-width: 768px){
-  .tool-columns{ grid-template-columns: repeat(2, 1fr); }
+
+#publications .card {
+    grid-column: 1 / -1;
+}
+
+/* Experience: single column timeline */
+#experience .card-grid {
+    grid-template-columns: 1fr;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--footerText);
+    font-size: 0.85rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 1000;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    cursor: pointer;
+}
+
+.theme-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    left: 14px;
+    bottom: 14px;
+    z-index: 1000;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    display: none;
+    cursor: pointer;
+}
+
+.back-to-top:active {
+    transform: scale(0.98);
+}
+
+.back-to-top.show {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
 }
 </style>
 </head>
@@ -436,16 +430,114 @@ html[data-theme="dark"] .tag{
 <div class="page-container">
 <header>
 <h1>Rajpreet Chahal, Ph.D.</h1>
-<p class="subtitle">Translational Neuroscience • Multimodal Systems • Human-Centered AI</p>
-<p style="margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.8;">chahal.rajpreet@gmail.com • Updated December 2025</p>
+<p class="subtitle">Translational Neuroscientist • </n> Specializing in Multimodal Systems & Human-Centered AI</p>
+<p class="header-contact">chahal.rajpreet@gmail.com • <a href="https://www.linkedin.com/in/rajpreet-chahal-ph-d-18406160/" target="_blank" rel="noopener">LinkedIn</a> • <a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></p>
 </header>
-<nav><a href="#overview">Overview</a><a href="#experience">Experience</a><a href="#systems">Signature Systems</a><a href="#genai">GenAI Evaluation</a><a href="#studies">Study Execution</a><a href="#publications">Publications</a></nav>
+<nav>
+<a href="#overview">Overview</a>
+<a href="#experience">Experience</a>
+<a href="#systems">Signature Systems</a>
+<a href="#genai">GenAI Evaluation</a>
+<a href="#studies">Study Execution</a>
+<a href="#speaking">Talks &amp; Media</a>
+<a href="#publications">Publications</a>
+<a href="index_methods.html">Methods</a>
+</nav>
 <main>
-<section id="overview"><p class="value-prop">I build <strong>end-to-end wellbeing systems</strong> that translate multimodal sensing and AI into <strong>personalized, adaptive experiences</strong>. My foundation is clinical and translational neuroscience with <strong>precision health</strong> methods and <strong><a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&amp;hl=en" rel="noopener" target="_blank">30+ peer-reviewed publications</a></strong>, evolved in industry into ownership of <strong>architecture, evaluation, and deployment pathways</strong> for closed-loop experiences.</p><p class="section-intro">Focus areas: measurable inference under real-world constraints, safety-aware GenAI evaluation, and longitudinal personalization that stays reliable over time.</p><div aria-label="Expand/Collapse controls" class="controls"><button class="btn" id="expandAll" type="button">Expand all</button><button class="btn" id="collapseAll" type="button">Collapse all</button></div></section><section class="section-alt-1" id="experience">
+<section id="overview">
+<p class="value-prop">I build <strong>end-to-end wellbeing systems</strong> that translate multimodal sensing and AI into <strong>personalized, adaptive experiences</strong>. My foundation is clinical and translational neuroscience with <strong>precision health</strong> methods and <strong><a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&amp;hl=en" rel="noopener" target="_blank">30+ peer-reviewed publications (1,100+ citations)</a></strong>, evolved in industry into ownership of <strong>architecture, evaluation, and deployment pathways</strong> for closed-loop experiences.</p>
+<p class="section-intro">Focus areas: measurable inference under real-world constraints, safety-aware GenAI evaluation, and longitudinal personalization that stays reliable over time.</p>
+<div aria-label="Expand/Collapse controls" class="controls">
+<button class="btn" id="expandAll" type="button">Expand all</button>
+<button class="btn" id="collapseAll" type="button">Collapse all</button>
+</div>
+</section>
+
+<section class="section-alt-1" id="experience">
 <h2>Experience</h2>
-<p class="section-intro">Time-ordered roles with architectural ownership across research, engineering, product, design, clinical partners, and leadership.</p>
-<div class="card-grid"><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Apple — VPG Health &amp; Fitness Strategy (2025–Present)</h4><p>Architects AI-driven wellbeing systems: personalization, evaluation, and closed-loop deployment paths.</p><div class="tag-list"><span class="tag">Wellbeing</span><span class="tag">AI</span><span class="tag">Strategy</span></div><div class="card-details"><ul><li>Architects evaluation strategy for AI-driven wellbeing systems, aligning safety, personalization, and longitudinal impact across cross-functional workstreams.</li><li>Defines decision-ready metrics, tradeoffs, and experimentation plans for closed-loop experiences in real-world constraints.</li><li>Leads reviews with health, design, engineering, and leadership to translate evidence into product direction and deployment requirements.</li></ul></div></div><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Apple — VPG Neuroscience (2022–2025)</h4><p>Built scalable multimodal inference and QA systems in a spatial computing environment.</p><div class="tag-list"><span class="tag">Neuroscience</span><span class="tag">Multimodal</span><span class="tag">Spatial Computing</span></div><div class="card-details"><ul><li>Built scalable multimodal pipelines in a spatial computing environment to infer sleep/alertness, attention, affect, and stress from heterogeneous sensors.</li><li>Solved synchronization and QA for dense and sparse streams to enable both real-time inference and retrospective longitudinal analysis.</li><li>Translated academic methods into reproducible systems used to support product research decisions and iteration.</li></ul></div></div><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Postdoctoral Fellow, Stanford University (2019–2022)</h4><p>Clinical and computational neuroscience with longitudinal prediction and neuroimaging integration.</p><div class="tag-list"><span class="tag">Postdoc</span><span class="tag">Clinical</span><span class="tag">Neuroimaging</span></div><div class="card-details"><ul><li>Led longitudinal, clinical-grade studies integrating neuroimaging, behavior, and self-report to model depression, anxiety, and resilience trajectories.</li><li>Owned end-to-end analysis pipelines and publication output, supported by NRSA and K-award funding mechanisms.</li><li>Built computational frameworks to characterize heterogeneity and individual differences over time.</li></ul></div></div><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>PhD, Human Development — UC Davis (2015–2019)</h4><p>Clinical and translational neuroscience training with precision mental health focus.</p><div class="tag-list"><span class="tag">PhD</span><span class="tag">Precision Health</span><span class="tag">Neuroscience</span></div><div class="card-details"><ul><li>Doctoral research in clinical and translational neuroscience with precision mental health focus; produced 30+ peer-reviewed publications.</li><li>Designed multimodal studies and models spanning neuroimaging, neurophysiology, behavior, and self-report.</li><li>Developed reproducible analysis tooling and statistical modeling foundations that translate directly to industry-scale systems.</li></ul></div></div><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Research Specialist, UPMC (2012–2015)</h4><p>Applied clinical research and protocol execution in hospital settings.</p><div class="tag-list"><span class="tag">Clinical Research</span><span class="tag">UPMC</span><span class="tag">Health</span></div><div class="card-details"><ul><li>Conducted applied clinical research in hospital-based settings with rigorous protocols and multidisciplinary collaboration.</li><li>Supported multimodal data acquisition and analysis workflows under real-world operational constraints.</li><li>Built early foundations in translational execution, ethics, and stakeholder communication.</li></ul></div></div></div>
-</section><section class="section-alt-2" id="systems">
+<p class="section-intro">Roles with architectural ownership across research, engineering, design, clinical partners, and leadership.</p>
+<div class="card-grid">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Lead Scientist — Apple (VPG Health &amp; Fitness Strategy), 2025–Present</h4>
+<p>Leads AI-driven wellbeing strategy: personalization, evaluation, and closed-loop deployment paths.</p>
+<div class="tag-list"><span class="tag">Wellbeing</span><span class="tag">AI</span><span class="tag">Strategy</span><span class="tag">Leadership</span></div>
+<div class="card-details">
+<ul>
+<li>Leads evaluation strategy for AI-driven wellbeing systems, aligning safety, personalization, and longitudinal impact across cross-functional workstreams.</li>
+<li>Defines decision-ready metrics, tradeoffs, and experimentation plans for closed-loop experiences in real-world constraints.</li>
+<li>Leads reviews with health, design, engineering, and leadership to translate evidence into product direction and deployment requirements.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Mental Health &amp; Well-being Computational Scientist — Apple (VPG Neuroscience), 2022–2025</h4>
+<p>Built end-to-end pipelines for XR/spatial computing wellbeing experiences; contributed to Mindfulness on Vision Pro.</p>
+<div class="tag-list"><span class="tag">Vision Pro</span><span class="tag">Mindfulness</span><span class="tag">XR</span><span class="tag">Spatial Computing</span><span class="tag">Multimodal</span></div>
+<div class="card-details">
+<ul>
+<li>Led 10+ R&D studies that enabled me to build end-to-end multi-sensor pipelines exploring the use of XR & spatial computing for wellbeing (including state inference and longitudinal prediction models)</li>
+<li>Contributed to evaluation of proposed and shipped wellbeing experiences (e.g., Mindfulness on Vision Pro) using multimodal streams, including perceptual risk assessments</li>
+<li>Built multi-stream dense data synchronization, resampling, and preprocessing platform used cross-functionally.</li>
+<li>Solved synchronization and QA for dense and sparse streams to enable both real-time inference and retrospective longitudinal analysis.</li>
+<li>Led sensor benchmarking and exploration of new hardware for novel sensing opportunities: built ML models & tested real-time inference on device, contributing to product decisions.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Postdoctoral Fellow — Stanford University (2019–2022)</h4>
+<p>NIH F32 &amp; Klingenstein Fellow with Dr. Ian Gotlib (author of the <i>Handbook of Depression</i>). First to examine different forms of early life stress and their longitudinal effects.</p>
+<div class="tag-list"><span class="tag">NIH F32</span><span class="tag">Klingenstein</span><span class="tag">Early Life Stress</span><span class="tag">Longitudinal</span><span class="tag">COVID-19</span></div>
+<div class="card-details">
+<ul>
+<li>Postdoctoral scientist with Dr. Ian Gotlib, author of the <i>Handbook of Depression</i>.</li>
+<li>NIH Ruth L. Kirschstein Postdoctoral Individual National Research Service Award (F32) recipient; Klingenstein Foundation Fellow.</li>
+<li>First to examine how different forms of early life stress (abuse, neglect, economic disadvantage) have distinct longitudinal effects on brain development, cognition, resilience, puberty, and stress response.</li>
+<li>Published influential COVID-19 mental health research on teenagers, featured in <a href="https://news.stanford.edu/stories/2020/09/covid-19s-mental-toll-teens" target="_blank" rel="noopener">Stanford Report</a>, <a href="https://med.stanford.edu/news/insights/2020/10/study-ties-teens-covid-19-resilience-to-their-ability-to-navigate-life.html" target="_blank" rel="noopener">Stanford Medicine</a>, and national media.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>PhD, Human Development — UC Davis, Center for Mind and Brain (2015–2019)</h4>
+<p>Designated Emphasis in Clinical and Translational Neuroscience with Dr. Amanda Guyer. Pioneered prediction of depression risk using neural trajectories.</p>
+<div class="tag-list"><span class="tag">PhD</span><span class="tag">Neural Trajectories</span><span class="tag">Depression Risk</span><span class="tag">Puberty</span><span class="tag">Precision Health</span></div>
+<div class="card-details">
+<ul>
+<li>Doctoral research with Dr.Amanda Guyer in clinical and translational neuroscience.</li>
+<li>First to explore predicting depression risk using neural trajectories — foundational work in precision mental health.</li>
+<li>First exploration of longitudinal brain biomarkers of pubertal onset and risk for depression in adolescents.</li>
+<li>Designed multimodal studies and models spanning neuroimaging, neurophysiology, behavior, and self-report.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Research Specialist — University of Pittsburgh Medical Center (2012–2015)</h4>
+<p>Clinical and developmental cognitive research with Dr. Beatriz Luna and Dr. Michael Hallquist. Pioneering work on integrative maturation of cognitive control.</p>
+<div class="tag-list"><span class="tag">fMRI</span><span class="tag">SCID</span><span class="tag">SIDP</span><span class="tag">Cognitive Control</span><span class="tag">Clinical Assessment</span></div>
+<div class="card-details">
+<ul>
+<li>Co-authored pioneering paper on integrative maturation of cognitive control with Beatriz Luna and Michael Hallquist.</li>
+<li>Conducted clinical evaluations using SCID and SIDP for personality disorders, substance use, and depression.</li>
+<li>Maintained all preprocessing pipelines for fMRI data.</li>
+<li>Built early foundations in translational execution, ethics, and stakeholder communication.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>B.S. Psychology, Cognition Emphasis — UC Davis (2008–2012)</h4>
+<p>Research in Dr. Joy Geng's Attention Lab using eye tracking and computational modeling.</p>
+<div class="tag-list"><span class="tag">Psychology</span><span class="tag">Cognition</span><span class="tag">Eye Tracking</span><span class="tag">Attention</span></div>
+<div class="card-details">
+<ul>
+<li>Conducted research in Dr. Joy Geng's Attention Lab using eye tracking to characterize the effect of rewards on attention.</li>
+<li>Applied computational models to understand attention dynamics and reward processing.</li>
+<li>Foundational training in cognitive psychology preparing for clinical and translational neuroscience research.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-alt-2" id="systems">
 <h2>Signature Systems</h2>
 <p class="section-intro">End-to-end platforms I architect, build, and validate. Each includes data engineering, modeling, evaluation, and deployment considerations, including spatial computing contexts.</p>
 <div class="card-grid">
@@ -457,7 +549,11 @@ html[data-theme="dark"] .tag{
 <span class="tag">PPG/HRV</span><span class="tag">EDA</span><span class="tag">Respiration</span><span class="tag">IMU</span><span class="tag">Eye Tracking</span>
 </div>
 <div class="card-details">
-<ul><li>Solved sub-second alignment across high-frequency streams (e.g., PPG and IMU) and sparse behavioral markers to enable real-time state inference.</li><li>Designed fusion robust to missingness, drift, and asynchronous clocks, with user-specific baselines and longitudinal stability checks.</li><li>Supports online inference for closed-loop experiences and offline analytics for cohort and personalization understanding.</li></ul>
+<ul>
+<li>Solved sub-second alignment across high-frequency streams (e.g., PPG and IMU) and sparse behavioral markers to enable real-time state inference.</li>
+<li>Designed fusion robust to missingness, drift, and asynchronous clocks, with user-specific baselines and longitudinal stability checks.</li>
+<li>Supports online inference for closed-loop experiences and offline analytics for cohort and personalization understanding.</li>
+</ul>
 </div>
 </div>
 <div aria-expanded="false" class="card" role="button" tabindex="0">
@@ -496,7 +592,11 @@ html[data-theme="dark"] .tag{
 <span class="tag">Rubrics</span><span class="tag">Autograders</span><span class="tag">Red Team</span>
 </div>
 <div class="card-details">
-<ul><li>Developed automated safety and behavioral-quality rubrics to scale review of wellbeing-focused generative experiences across frontier model families.</li><li>Built autograder pipelines with human-in-the-loop escalation for sensitive content, enabling faster iteration while preserving clinical-grade caution.</li><li>Evaluates longitudinal consistency, context grounding, and intervention appropriateness for multi-session personalization.</li></ul>
+<ul>
+<li>Developed automated safety and behavioral-quality rubrics to scale review of wellbeing-focused generative experiences across frontier model families.</li>
+<li>Built autograder pipelines with human-in-the-loop escalation for sensitive content, enabling faster iteration while preserving clinical-grade caution.</li>
+<li>Evaluates longitudinal consistency, context grounding, and intervention appropriateness for multi-session personalization.</li>
+</ul>
 </div>
 </div>
 <div aria-expanded="false" class="card" role="button" tabindex="0">
@@ -521,11 +621,85 @@ html[data-theme="dark"] .tag{
 <span class="tag">VR</span><span class="tag">Spatial Audio</span><span class="tag">Adaptive</span>
 </div>
 <div class="card-details">
-<ul><li>Designed adaptive digital and VR interventions where inferred state controls timing, intensity, and content selection in real time.</li><li>Instrumented experiences for measurable outcomes (recovery dynamics, engagement, trajectories) and longitudinal evaluation under safety constraints.</li><li>Bridges clinical rigor and product constraints for scalable deployment in spatial computing contexts.</li></ul>
+<ul>
+<li>Designed adaptive digital and VR interventions where inferred state controls timing, intensity, and content selection in real time.</li>
+<li>Instrumented experiences for measurable outcomes (recovery dynamics, engagement, trajectories) and longitudinal evaluation under safety constraints.</li>
+<li>Bridges clinical rigor and product constraints for scalable deployment in spatial computing contexts.</li>
+</ul>
 </div>
 </div>
-<div aria-expanded="false" class="card" role="button" tabindex="0"><div class="card-meta">Inputs → Pipelines</div><h4>Modalities &amp; Data</h4><p>Integrated pipelines spanning physiology, vision, behavior, and neuroimaging or neurophysiology for longitudinal modeling.</p><div class="tag-list"><span class="tag">PPG/HRV</span><span class="tag">EDA</span><span class="tag">Respiration</span><span class="tag">IMU</span><span class="tag">Eye Tracking</span><span class="tag">EMA/Tasks</span><span class="tag">fMRI</span><span class="tag">EEG/MEG</span><span class="tag">RF</span></div><div class="card-details"><ul><li>End-to-end ingestion, synchronization, QA, feature pipelines, and visualization across dense and sparse streams.</li><li>Combines multimodal inputs with self-report and task measures for precision health and trajectory modeling.</li><li>Built to support study execution, product research iteration, and deployment readiness.</li></ul></div></div></div>
-</section><section class="section-alt-3" id="computing"><h2>Scientific Computing and Methodology</h2><p class="section-intro">Reproducible research engineering for multimodal, longitudinal datasets, from raw sensor streams to decision-ready evidence.</p><div class="tool-columns"><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Tooling and Infrastructure</h4><p>Built and maintained modular pipelines, visualization layers, and evaluation tooling across heterogeneous streams.</p><div class="tag-list"><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">Bash</span><span class="tag">PySide</span><span class="tag">CoreML</span><span class="tag">HealthKit</span><span class="tag">SensorKit</span><span class="tag">XDF/JSON/CSV</span></div><div class="card-details"><ul><li>Time alignment and merge-as-of strategies for dense and sparse data with rigorous QA checks.</li><li>Internal tools for data concatenation, sensor visualization, cohort dashboards, and experiment monitoring.</li><li>Autograder and evaluator pipelines to test GenAI behaviors and longitudinal prompt refinement.</li></ul></div></div><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Modeling and Validation</h4><p>Methods that hold up under missingness, drift, and imperfect ground truth in real-world wellbeing contexts.</p><div class="tag-list"><span class="tag">Time-series</span><span class="tag">Representation Learning</span><span class="tag">Regime Switching</span><span class="tag">LSTM/Sequence Models</span><span class="tag">Bayesian/Stats</span><span class="tag">Proxy Labels</span><span class="tag">Synthetic Data</span><span class="tag">A/B + Longitudinal</span></div><div class="card-details"><ul><li>Validation via converging evidence: physiology, behavior, self-report, and task performance when direct labels are limited.</li><li>Longitudinal evaluation: stability, personalization lift, and safety consistency across sessions.</li><li>Neuroimaging-informed modeling (fMRI; plus EEG/MEG where relevant) integrated with behavioral and physiological measures.</li></ul></div></div></div></section><section class="section-alt-4 section-alt-3" id="genai">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Vision → Physiology</div>
+<h4>Computer Vision for Physiological Signal Estimation</h4>
+<p>Camera-based estimation of vital signs and behavioral states from video.</p>
+<div class="tag-list">
+<span class="tag">rPPG</span><span class="tag">Heart Rate</span><span class="tag">Respiration</span><span class="tag">Drowsiness</span><span class="tag">Computer Vision</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Developed pipelines using computer vision to estimate physiological signals including heart rate, respiration, and drowsiness from video.</li>
+<li>Remote photoplethysmography (rPPG) and appearance-based methods for contactless vital sign monitoring.</li>
+<li>Validation frameworks for comparing camera-based estimates against gold-standard sensors.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Inputs → Pipelines</div>
+<h4>Modalities &amp; Data</h4>
+<p>Integrated pipelines spanning physiology, vision, behavior, and neuroimaging or neurophysiology for longitudinal modeling.</p>
+<div class="tag-list">
+<span class="tag">PPG/HRV</span><span class="tag">EDA</span><span class="tag">Respiration</span><span class="tag">IMU</span><span class="tag">Eye Tracking</span><span class="tag">EMA/Tasks</span><span class="tag">fMRI</span><span class="tag">EEG/MEG</span><span class="tag">RF</span>
+</div>
+<div class="card-details">
+<ul>
+<li>End-to-end ingestion, synchronization, QA, feature pipelines, and visualization across dense and sparse streams.</li>
+<li>Combines multimodal inputs with self-report and task measures for precision health and trajectory modeling.</li>
+<li>Built to support study execution, product research iteration, and deployment readiness.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-alt-3" id="computing">
+<h2>Scientific Computing and Methodology</h2>
+<p class="section-intro">Reproducible research engineering for multimodal, longitudinal datasets, from raw sensor streams to decision-ready evidence.</p>
+<div class="tool-columns">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Tooling and Infrastructure</h4>
+<p>Built and maintained modular pipelines, visualization layers, and evaluation tooling across heterogeneous streams.</p>
+<div class="tag-list">
+<span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">Bash</span><span class="tag">PySide</span><span class="tag">CoreML</span><span class="tag">HealthKit</span><span class="tag">SensorKit</span><span class="tag">XDF/JSON/CSV</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Time alignment and merge-as-of strategies for dense and sparse data with rigorous QA checks.</li>
+<li>Internal tools for data concatenation, sensor visualization, cohort dashboards, and experiment monitoring.</li>
+<li>Autograder and evaluator pipelines to test GenAI behaviors and longitudinal prompt refinement.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Modeling and Validation</h4>
+<p>Physiologically grounded, interpretable, deployable ML — substance over hype.</p>
+<div class="tag-list">
+<span class="tag">PyTorch</span><span class="tag">CoreML</span><span class="tag">RNN/LSTM</span><span class="tag">Markov Regime Switching</span><span class="tag">GAMMs</span><span class="tag">NLP</span><span class="tag">RL Feedback Loops</span>
+</div>
+<div class="card-details">
+<ul>
+<li>PyTorch and CoreML for deployable, on-device inference; RNN/LSTM architectures for sequential physiological data.</li>
+<li>Feature-based ML pipelines grounded in domain knowledge; Markov regime switching models for state detection.</li>
+<li>Effect size modeling and RL-style feedback loops for adaptive, closed-loop interventions.</li>
+<li>Highly proficient in longitudinal modeling including GAMMs, between-person and within-person change models.</li>
+<li>NLP pipelines for text-based wellbeing signals; validation via converging evidence across physiology, behavior, and self-report.</li>
+<li>Neuroimaging-informed modeling (fMRI; plus EEG/MEG where relevant) integrated with behavioral and physiological measures.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-alt-4" id="genai">
 <h2>Generative AI</h2>
 <p class="section-intro">Evaluation and orchestration patterns for wellbeing-oriented GenAI, emphasizing safety, grounding, and multi-session reliability.</p>
 <div class="card-grid">
@@ -533,29 +707,165 @@ html[data-theme="dark"] .tag{
 <h4>Frontier Model Experience</h4>
 <p>Applied evaluation across major model families (OpenAI GPT, Anthropic Claude, Google Gemini) and VLMs.</p>
 <div class="tag-list">
-<span class="tag">GPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">VLMs</span>
-</div>
-<div class="card-details">
-<ul><li>Designed comparative test suites across GPT, Claude, and Gemini for wellbeing scenarios, including failure-mode analysis.</li><li>Evaluated VLM grounding and context sensitivity for adaptive experience selection under privacy and safety constraints.</li><li>Built scenario libraries to stress-test personalization, refusal behavior, and escalation pathways.</li></ul>
-</div>
-</div>
-<div aria-expanded="false" class="card" role="button" tabindex="0">
-<h4>Safety, Appropriateness, and Longitudinal Consistency</h4>
-<p>Rubric-driven evaluators and guardrails for sensitive wellbeing domains and multi-session experiences.</p>
-<div class="tag-list">
-<span class="tag">Safety</span><span class="tag">Autograding</span><span class="tag">Memory</span>
+<span class="tag">GPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">VLMs</span><span class="tag">RLHF</span><span class="tag">DPO</span>
 </div>
 <div class="card-details">
 <ul>
+<li>Designed comparative test suites across GPT, Claude, and Gemini for wellbeing scenarios, including failure-mode analysis.</li>
+<li>Experience with RLHF, RLAIF, and DPO alignment techniques for wellbeing-focused model behavior.</li>
+<li>Evaluated VLM grounding and context sensitivity for adaptive experience selection under privacy and safety constraints.</li>
+<li>Built scenario libraries to stress-test personalization, refusal behavior, and escalation pathways.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Safety, Alignment, and Red Teaming</h4>
+<p>Rubric-driven evaluators, red teaming, and guardrails for sensitive wellbeing domains.</p>
+<div class="tag-list">
+<span class="tag">Red Teaming</span><span class="tag">Alignment</span><span class="tag">Safety</span><span class="tag">Autograding</span><span class="tag">RLHF</span><span class="tag">RLAIF</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Red teaming and adversarial testing to identify failure modes in wellbeing-focused generative systems.</li>
 <li>Autograder pipelines + human review; escalation logic for high-risk content.</li>
+<li>Experience with alignment techniques including RLHF, RLAIF, and DPO for safety-critical applications.</li>
 <li>Consistency checks across sessions; prompt refinement with auditability.</li>
 </ul>
 </div>
 </div>
 </div>
-</section><section class="section-alt-4 section-alt-1" id="publications"><h2>Publications</h2><p class="section-intro">Selected outlets and topical coverage. Full publication list is available via Google Scholar.</p><div class="card-grid"><div aria-expanded="false" class="card" role="button" tabindex="0"><h4>Selected outlets and full list</h4><p>Published in major outlets including <i>Annual Review of Neuroscience</i>, <i>Journal of Child Psychology and Psychiatry</i>, <i>Development and Psychopathology</i>, and <i>Journal of Attention Disorders</i>. Coverage spans clinical and developmental neuroscience, precision mental health, longitudinal multimodal modeling, and neuroimaging-informed prediction.</p><div class="tag-list"><span class="tag">30+ Publications</span><span class="tag">Peer Reviewed</span><span class="tag">Neuroimaging</span><span class="tag">Clinical</span></div><div class="card-details"><p><a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&amp;hl=en" rel="noopener" target="_blank">Google Scholar (full list)</a></p></div></div></div></section></main>
-<footer>Rajpreet Chahal • December 2025</footer>
+</section>
+
+<section class="section-alt-2" id="studies">
+<h2>Study Execution</h2>
+<p class="section-intro">End-to-end ownership of human subjects research, from protocol design through data collection to analysis-ready deliverables.</p>
+<div class="card-grid">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Design → Protocol</div>
+<h4>Study Design &amp; Protocol Development</h4>
+<p>Clinical-grade protocols for longitudinal, multimodal research in academic and industry contexts.</p>
+<div class="tag-list">
+<span class="tag">IRB</span><span class="tag">Protocol</span><span class="tag">Longitudinal</span><span class="tag">Clinical</span>
 </div>
+<div class="card-details">
+<ul>
+<li>Designed and led IRB-approved protocols spanning neuroimaging, wearables, behavioral tasks, and self-report.</li>
+<li>Built study designs that balance scientific rigor with operational feasibility and participant burden.</li>
+<li>Experience with vulnerable populations, clinical samples, and multi-site coordination.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Collection → QA</div>
+<h4>Data Collection &amp; Quality Assurance</h4>
+<p>High-fidelity multimodal data acquisition with real-time QA and participant management.</p>
+<div class="tag-list">
+<span class="tag">fMRI</span><span class="tag">Wearables</span><span class="tag">EMA</span><span class="tag">Behavioral Tasks</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Managed concurrent data streams (neuroimaging, physiology, behavior, EMA) with synchronization and integrity checks.</li>
+<li>Built real-time QA dashboards to catch dropout, artifacts, and protocol deviations during collection.</li>
+<li>Trained and supervised research staff on acquisition protocols and troubleshooting.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Participants → Retention</div>
+<h4>Recruitment &amp; Retention</h4>
+<p>Strategies for reaching target populations and maintaining longitudinal engagement.</p>
+<div class="tag-list">
+<span class="tag">Recruitment</span><span class="tag">Retention</span><span class="tag">Scheduling</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Designed recruitment funnels for clinical, adolescent, and community samples with attention to representation.</li>
+<li>Developed retention strategies for multi-wave longitudinal studies with high follow-up rates.</li>
+<li>Managed participant scheduling, compensation, and communication workflows.</li>
+</ul>
+</div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Analysis → Deliverables</div>
+<h4>Analysis Pipelines &amp; Reporting</h4>
+<p>Reproducible workflows from raw data to publication-ready outputs and decision artifacts.</p>
+<div class="tag-list">
+<span class="tag">Reproducibility</span><span class="tag">Pipelines</span><span class="tag">Visualization</span>
+</div>
+<div class="card-details">
+<ul>
+<li>Built reproducible analysis pipelines with version control, documentation, and audit trails.</li>
+<li>Delivered analysis-ready datasets, statistical reports, and visualizations for publications and stakeholder reviews.</li>
+<li>Translated study findings into actionable recommendations for product and research direction.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-alt-4" id="speaking">
+<h2>Talks &amp; Media</h2>
+<p class="section-intro">Invited presentations and media coverage spanning academic conferences, community outreach, and national news.</p>
+<div class="card-grid">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Media</div>
+<h4><a href="https://www.rajpreet-chahal.com/post/getting-started/" target="_blank" rel="noopener">NBC Stay Tuned / Snapchat News (October 2020)</a></h4>
+<p>Interview with Ian Gotlib on COVID-19's mental health impact on teenagers, aired on Snapchat News.</p>
+<div class="tag-list"><span class="tag">NBC</span><span class="tag">Snapchat</span><span class="tag">COVID-19</span><span class="tag">2020</span></div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Media</div>
+<h4>Stanford News &amp; National Coverage (September 2020)</h4>
+<p>Featured research on teen mental health during COVID-19 in <a href="https://news.stanford.edu/stories/2020/09/covid-19s-mental-toll-teens" target="_blank" rel="noopener">Stanford Report</a>, <a href="https://med.stanford.edu/news/insights/2020/10/study-ties-teens-covid-19-resilience-to-their-ability-to-navigate-life.html" target="_blank" rel="noopener">Stanford Medicine</a>, <a href="https://www.eurekalert.org/pub_releases/2020-09/su-spi092220.php" target="_blank" rel="noopener">EurekAlert</a>, and other outlets.</p>
+<div class="tag-list"><span class="tag">Stanford</span><span class="tag">Press</span><span class="tag">COVID-19</span><span class="tag">2020</span></div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Media</div>
+<h4><a href="https://acamh.onlinelibrary.wiley.com/doi/abs/10.1002/jcv2.12061" target="_blank" rel="noopener">ACAMH — JCPP Advances (2020–2022)</a></h4>
+<p>Research featured by the Association for Child and Adolescent Mental Health, including publications in JCPP Advances.</p>
+<div class="tag-list"><span class="tag">ACAMH</span><span class="tag">JCPP</span><span class="tag">Mental Health</span></div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Talk</div>
+<h4><a href="https://namisantaclara.org/general-meeting-tue-mar-8-2022-dr-rajpreet-chahal/" target="_blank" rel="noopener">NAMI Santa Clara (March 2022)</a></h4>
+<p>"How Do Different Types of Stressful Experiences Affect Brain Development and Mental Health in Teenagers" — community mental health outreach.</p>
+<div class="tag-list"><span class="tag">NAMI</span><span class="tag">Outreach</span><span class="tag">2022</span></div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Talk</div>
+<h4><a href="https://www.rajpreet-chahal.com/talk/stanford-affective-seminar-fall-2021-talk/" target="_blank" rel="noopener">Stanford Affective Seminar (Fall 2021)</a></h4>
+<p>Research talk on early adversity, brain network connectivity, and internalizing symptoms in adolescence.</p>
+<div class="tag-list"><span class="tag">Stanford</span><span class="tag">Research</span><span class="tag">2021</span></div>
+</div>
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<div class="card-meta">Talk</div>
+<h4><a href="https://www.rajpreet-chahal.com/talk/aps-2021-flash-talk/" target="_blank" rel="noopener">APS 2021 Flash Talk</a></h4>
+<p>Rapid-format research presentation at the Association for Psychological Science annual convention on brain network connectivity and symptom trajectories.</p>
+<div class="tag-list"><span class="tag">APS</span><span class="tag">Conference</span><span class="tag">2021</span></div>
+</div>
+</div>
+</section>
+
+<section class="section-alt-1" id="publications">
+<h2>Publications</h2>
+<p class="section-intro">Selected outlets and topical coverage. Full publication list is available via Google Scholar.</p>
+<div class="card-grid">
+<div aria-expanded="false" class="card" role="button" tabindex="0">
+<h4>Selected outlets and full list</h4>
+<p>Published in major outlets including <i>Annual Review of Neuroscience</i>, <i>Journal of Child Psychology and Psychiatry</i>, <i>Development and Psychopathology</i>, <i>Biological Psychiatry: CNNI</i>, and <i>Psychological Medicine</i>. Coverage spans clinical and developmental neuroscience, precision mental health, longitudinal multimodal modeling, and neuroimaging-informed prediction.</p>
+<div class="tag-list">
+<span class="tag">30+ Publications</span><span class="tag">1,100+ Citations</span><span class="tag">Peer Reviewed</span><span class="tag">Neuroimaging</span>
+</div>
+<div class="card-details">
+<p><a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&amp;hl=en" rel="noopener" target="_blank">Google Scholar (full list)</a> • <a href="https://www.semanticscholar.org/author/Rajpreet-Chahal/33855224" rel="noopener" target="_blank">Semantic Scholar</a> • <a href="https://orcid.org/0000-0003-0985-5622" rel="noopener" target="_blank">ORCID</a></p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>Dr. Rajpreet Chahal • December 2025</footer>
+</div>
+
 <script>
 (function(){
   function toggleCard(card, expanded){
@@ -575,7 +885,6 @@ html[data-theme="dark"] .tag{
 
     const card = t.closest ? t.closest('.card[role="button"]') : null;
     if(!card) return;
-    // Allow links inside details to work without toggling
     if(t.tagName && t.tagName.toLowerCase() === 'a') return;
     toggleCard(card);
   });
@@ -590,12 +899,17 @@ html[data-theme="dark"] .tag{
   });
 })();
 </script>
-<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle" type="button">Dark</button><script>
+
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle" type="button">Dark</button>
+<script>
 (function(){
   const root = document.documentElement;
   const btn = document.getElementById('themeToggle');
   const saved = localStorage.getItem('theme');
-  if(saved === 'dark'){
+  if(saved === 'light'){
+    root.removeAttribute('data-theme');
+    if(btn) btn.textContent = 'Dark';
+  } else {
     root.setAttribute('data-theme','dark');
     if(btn) btn.textContent = 'Light';
   }
@@ -613,7 +927,10 @@ html[data-theme="dark"] .tag{
   }
   if(btn) btn.addEventListener('click', toggle);
 })();
-</script><button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">Top</button><script>
+</script>
+
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">Top</button>
+<script>
 (function(){
   const btn = document.getElementById('backToTop');
   if(!btn) return;
@@ -625,5 +942,6 @@ html[data-theme="dark"] .tag{
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 })();
-</script></body>
+</script>
+</body>
 </html>
