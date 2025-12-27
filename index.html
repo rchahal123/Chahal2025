@@ -437,7 +437,7 @@ footer {
 <a href="resume.html">Resume</a>
 <a href="#overview">Overview</a>
 <a href="#experience">Experience</a>
-<a href="#systems">Signature Systems</a>
+<a href="#systems">Closed-loop Systems</a>
 <a href="#genai">GenAI Evaluation</a>
 <a href="#studies">Study Execution</a>
 <a href="#speaking">Talks &amp; Media</a>
@@ -537,19 +537,19 @@ footer {
 </section>
 
 <section class="section-alt-2" id="systems">
-<h2>Signature Systems</h2>
-<p class="section-intro">End-to-end platforms I architect, build, and validate. Each includes data engineering, modeling, evaluation, and deployment considerations, including spatial computing contexts.</p>
+<h2>Closed-loop Systems</h2>
+<p class="section-intro">End-to-end platforms I architect, build, and validate. Each includes research studies to to collect data, feature engineering, modeling, evaluation, and on-device inference considerations.</p>
 <div class="card-grid">
 <div aria-expanded="false" class="card" role="button" tabindex="0">
 <div class="card-meta">Sensing → Inference</div>
 <h4>Multimodal State Inference Engine</h4>
-<p>Real-time estimation of affect, stress, sleep/alertness, attention, and receptivity from multimodal signals.</p>
+<p>Real-time estimation of psychophysiological states and receptivity from multimodal signals.</p>
 <div class="tag-list">
-<span class="tag">PPG/HRV</span><span class="tag">EDA</span><span class="tag">Respiration</span><span class="tag">IMU</span><span class="tag">Eye Tracking</span>
+<span class="tag">PPG/HRV</span><span class="tag">EDA</span><span class="tag">Respiration</span><span class="tag">IMU</span><span class="tag">EEG</span><span class="tag">RF</span><span class="tag">Blendshapes</span><span class="tag">Eye Tracking</span>
 </div>
 <div class="card-details">
 <ul>
-<li>Solved sub-second alignment across high-frequency streams (e.g., PPG and IMU) and sparse behavioral markers to enable real-time state inference.</li>
+<li>Alignment across high-frequency streams (e.g., PPG and IMU) and sparse behavioral markers to enable real-time state inference.</li>
 <li>Designed fusion robust to missingness, drift, and asynchronous clocks, with user-specific baselines and longitudinal stability checks.</li>
 <li>Supports online inference for closed-loop experiences and offline analytics for cohort and personalization understanding.</li>
 </ul>
@@ -560,7 +560,7 @@ footer {
 <h4>Sensor Quality &amp; Benchmarking Framework</h4>
 <p>Validation-first pipeline for sensor incubation: data integrity, alignment, artifact handling, and benchmark reporting.</p>
 <div class="tag-list">
-<span class="tag">Sensor Kit</span><span class="tag">HealthKit</span><span class="tag">QA Dashboards</span>
+<span class="tag">Sensor Kit</span><span class="tag">HealthKit</span><span class="tag">ARKit</span><span class="tag">Blendshapes</span><span class="tag">QA Dashboards</span>
 </div>
 <div class="card-details">
 <ul>
@@ -594,7 +594,7 @@ footer {
 <ul>
 <li>Developed automated safety and behavioral-quality rubrics to scale review of wellbeing-focused generative experiences across frontier model families.</li>
 <li>Built autograder pipelines with human-in-the-loop escalation for sensitive content, enabling faster iteration while preserving clinical-grade caution.</li>
-<li>Evaluates longitudinal consistency, context grounding, and intervention appropriateness for multi-session personalization.</li>
+<li>Evaluates longitudinal consistency, context grounding, and intervention appropriateness for multi-session personalization. Iterative optimization of long-term memory for specific use cases.</li>
 </ul>
 </div>
 </div>
@@ -608,14 +608,14 @@ footer {
 <div class="card-details">
 <ul>
 <li>Controlled perturbations: missing signals, drift, noise spikes, distribution shift.</li>
-<li>Supports iteration planning and reliability requirements before deployment.</li>
+<li>Supports iteration planning and reliability requirements.</li>
 </ul>
 </div>
 </div>
 <div aria-expanded="false" class="card" role="button" tabindex="0">
 <div class="card-meta">XR → Interventions</div>
 <h4>Digital + XR Intervention Platform</h4>
-<p>Adaptive digital and VR-based interventions for stress recovery, affect regulation, and depression/anxiety support.</p>
+<p>Adaptive digital and VR-based interventions for wellbeing.</p>
 <div class="tag-list">
 <span class="tag">VR</span><span class="tag">Spatial Audio</span><span class="tag">Adaptive</span>
 </div>
@@ -623,7 +623,7 @@ footer {
 <ul>
 <li>Designed adaptive digital and VR interventions where inferred state controls timing, intensity, and content selection in real time.</li>
 <li>Instrumented experiences for measurable outcomes (recovery dynamics, engagement, trajectories) and longitudinal evaluation under safety constraints.</li>
-<li>Bridges clinical rigor and product constraints for scalable deployment in spatial computing contexts.</li>
+<li>Bridges clinical rigor and product constraints in spatial computing contexts.</li>
 </ul>
 </div>
 </div>
@@ -632,12 +632,11 @@ footer {
 <h4>Computer Vision for Physiological Signal Estimation</h4>
 <p>Camera-based estimation of vital signs and behavioral states from video.</p>
 <div class="tag-list">
-<span class="tag">rPPG</span><span class="tag">Heart Rate</span><span class="tag">Respiration</span><span class="tag">Drowsiness</span><span class="tag">Computer Vision</span>
+<span class="tag">optical flow</span><span class="tag">OpenCV</span><span class="tag">Facial Expression</span><span class="tag">Semantic Segmentation</span><span class="tag">arousal</span>
 </div>
 <div class="card-details">
 <ul>
-<li>Developed pipelines using computer vision to estimate physiological signals including heart rate, respiration, and drowsiness from video.</li>
-<li>Remote photoplethysmography (rPPG) and appearance-based methods for contactless vital sign monitoring.</li>
+<li>Developed pipelines using computer vision to estimate physiological signals and cognitive states from video.</li>
 <li>Validation frameworks for comparing camera-based estimates against gold-standard sensors.</li>
 </ul>
 </div>
@@ -653,7 +652,7 @@ footer {
 <ul>
 <li>End-to-end ingestion, synchronization, QA, feature pipelines, and visualization across dense and sparse streams.</li>
 <li>Combines multimodal inputs with self-report and task measures for precision health and trajectory modeling.</li>
-<li>Built to support study execution, product research iteration, and deployment readiness.</li>
+<li>Built to support study execution and product research iteration.</li>
 </ul>
 </div>
 </div>
@@ -672,7 +671,7 @@ footer {
 </div>
 <div class="card-details">
 <ul>
-<li>Time alignment and merge-as-of strategies for dense and sparse data with rigorous QA checks.</li>
+<li>Time alignment, resampling, preprocessing of dense and sparse data with rigorous QA checks.</li>
 <li>Internal tools for data concatenation, sensor visualization, cohort dashboards, and experiment monitoring.</li>
 <li>Autograder and evaluator pipelines to test GenAI behaviors and longitudinal prompt refinement.</li>
 </ul>
@@ -680,13 +679,13 @@ footer {
 </div>
 <div aria-expanded="false" class="card" role="button" tabindex="0">
 <h4>Modeling and Validation</h4>
-<p>Physiologically grounded, interpretable, deployable ML.</p>
+<p>ML that is physiologically grounded, interpretable, and optimized for on-device inference.</p>
 <div class="tag-list">
 <span class="tag">PyTorch</span><span class="tag">CoreML</span><span class="tag">RNN/LSTM</span><span class="tag">Markov Regime Switching</span><span class="tag">GAMMs</span><span class="tag">NLP</span><span class="tag">RL Feedback Loops</span>
 </div>
 <div class="card-details">
 <ul>
-<li>PyTorch and CoreML for deployable, on-device inference; RNN/LSTM architectures for sequential physiological data.</li>
+<li>PyTorch and CoreML for on-device inference; RNN/LSTM architectures for sequential physiological data.</li>
 <li>Feature-based ML pipelines grounded in domain knowledge; Markov regime switching models for state detection.</li>
 <li>Effect size modeling and RL-style feedback loops for adaptive, closed-loop interventions.</li>
 <li>Highly proficient in longitudinal modeling including GAMMs, between-person and within-person change models.</li>
@@ -710,7 +709,7 @@ footer {
 </div>
 <div class="card-details">
 <ul>
-<li>Designed comparative test suites across GPT, Claude, and Gemini for wellbeing scenarios, including failure-mode analysis.</li>
+<li>Designed comparative test suites across GPT, Claude, and Gemini for longitudinal wellbeing scenarios, including failure-mode analysis.</li>
 <li>Experience with RLHF, RLAIF, and DPO alignment techniques for wellbeing-focused model behavior.</li>
 <li>Evaluated VLM grounding and context sensitivity for adaptive experience selection under privacy and safety constraints.</li>
 <li>Built scenario libraries to stress-test personalization, refusal behavior, and escalation pathways.</li>
@@ -721,7 +720,7 @@ footer {
 <h4>Safety, Alignment, and Red Teaming</h4>
 <p>Rubric-driven evaluators, red teaming, and guardrails for sensitive wellbeing domains.</p>
 <div class="tag-list">
-<span class="tag">Red Teaming</span><span class="tag">Alignment</span><span class="tag">Safety</span><span class="tag">Autograding</span><span class="tag">RLHF</span><span class="tag">RLAIF</span>
+<span class="tag">Red Teaming</span><span class="tag">Alignment</span><span class="tag">Safety</span><span class="tag">Autograding</span><span class="tag">RLHF</span><span class="tag">Ethics</span>
 </div>
 <div class="card-details">
 <ul>
