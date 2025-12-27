@@ -7,7 +7,7 @@
 <style>
 @page {
     size: letter;
-    margin: 0.4in;
+    margin: 0.35in;
 }
 
 * {
@@ -18,8 +18,8 @@
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 9.5pt;
-    line-height: 1.2;
+    font-size: 8pt;
+    line-height: 1.18;
     color: #1a1a1a;
     background: #fff;
     -webkit-print-color-adjust: exact;
@@ -29,7 +29,7 @@ body {
 .resume {
     max-width: 8.5in;
     margin: 0 auto;
-    padding: 0.4in;
+    padding: 0.35in;
 }
 
 @media print {
@@ -40,21 +40,21 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding-bottom: 8px;
-    margin-bottom: 10px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
     border-bottom: 2px solid #2563eb;
 }
 
 h1 {
-    font-size: 18pt;
+    font-size: 17pt;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: #0f172a;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .contact {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #475569;
 }
 
@@ -63,20 +63,16 @@ h1 {
     text-decoration: none;
 }
 
-.contact a:hover {
-    text-decoration: underline;
-}
-
 .contact span {
-    margin: 0 6px;
+    margin: 0 5px;
     color: #cbd5e1;
 }
 
 /* Summary */
 .summary {
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #334155;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-align: justify;
 }
 
@@ -86,54 +82,54 @@ h1 {
 
 /* Section Headers */
 h2 {
-    font-size: 9pt;
+    font-size: 8.5pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #2563eb;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 2px;
-    margin: 8px 0 5px 0;
+    margin: 6px 0 4px 0;
 }
 
-/* Experience & Education Items */
+/* Experience Items */
 .item {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .item-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .item-title {
     font-weight: 700;
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #0f172a;
 }
 
 .item-meta {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #64748b;
     font-weight: 500;
 }
 
 .item-subtitle {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #475569;
     font-style: italic;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .item ul {
-    margin-left: 14px;
+    margin-left: 12px;
     color: #334155;
 }
 
 .item li {
-    margin-bottom: 1px;
+    margin-bottom: 0px;
 }
 
 .item li::marker {
@@ -144,18 +140,18 @@ h2 {
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px 16px;
+    gap: 2px 14px;
 }
 
 .skill-row {
     display: flex;
-    font-size: 8pt;
+    font-size: 7.5pt;
 }
 
 .skill-label {
     font-weight: 600;
     color: #475569;
-    min-width: 85px;
+    min-width: 70px;
     flex-shrink: 0;
 }
 
@@ -167,11 +163,11 @@ h2 {
 .edu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    gap: 4px;
 }
 
 .edu-item {
-    font-size: 8pt;
+    font-size: 7.5pt;
 }
 
 .edu-degree {
@@ -184,19 +180,19 @@ h2 {
 }
 
 .edu-mentor {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: #64748b;
     font-style: italic;
 }
 
 .edu-date {
-    font-size: 7pt;
+    font-size: 6.5pt;
     color: #94a3b8;
 }
 
 /* Publications */
 .pubs {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #334155;
 }
 
@@ -206,18 +202,10 @@ h2 {
     font-weight: 500;
 }
 
-.pubs a:hover {
-    text-decoration: underline;
-}
-
-/* Links in content */
+/* Links */
 a.paper-link {
     color: #2563eb;
     text-decoration: none;
-}
-
-a.paper-link:hover {
-    text-decoration: underline;
 }
 </style>
 </head>
@@ -242,7 +230,7 @@ San Francisco Bay Area
 </header>
 
 <p class="summary">
-Translational neuroscientist building <strong>multimodal AI-driven wellbeing systems</strong> that are grounded in cognitive and developmental psychology, ethics, and principles of behavioral science. I have extensive experience in the full pipeline of closed-loop health experiences using physiological sensing and LLM agents, including <strong>research study design and execution, data analysis and feature engineering, model architecture, evaluation, and on-device inference testing</strong>. For safety-critical behaviors, I build end-to-end LLM evaluation pipelines, alignment testing, and refinement suites prioritizing human review. I work collaboratively with cross-functional partners across design, software, and hardware engineering. <strong>30+ publications</strong> (1,100+ citations) in neuroscience, methodology, and precision health.
+Translational neuroscientist and developmental psychologist with <strong>10+ years researching adolescent mental health, neurocognitive development, and early life stress</strong>. At Apple, I build <strong>end-to-end AI-driven wellbeing systems</strong>: from multimodal sensing and state inference to LLM-agent architectures, safety evaluation, and on-device deployment. I design <strong>red-teaming methodologies, RLHF/DPO strategies, model guardrails, and evaluation pipelines</strong> that ensure safe, developmentally appropriate human-AI interactions. I own the full pipeline—research study design, data engineering, model architecture, and cross-functional integration with clinical, design, and engineering teams. <strong>30+ publications</strong> (1,100+ citations) in precision mental health, developmental neuroscience, and clinical methodology.
 </p>
 
 <h2>Experience</h2>
@@ -253,10 +241,11 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 <span class="item-meta">2025 – Present</span>
 </div>
 <ul>
-<li>Own evaluation strategy for wellbeing scenarios with human-in-the-loop review: rubrics, quality autograders, escalation logic</li>
-<li>Lead synthetic data generation, RLHF/RLAIF, and DPO strategies for wellbeing-focused generative systems</li>
-<li>Design longitudinal personalization architectures and GenAI deployment requirements under safety constraints</li>
-<li>Apply red teaming methodologies: adversarial testing, context sensitivity evaluation, consistency checks with audit trails</li>
+<li>Own full prompt engineering and architecture of multi-agent closed-loop wellbeing experience, including long-term memory and personalization systems</li>
+<li>Design safety frameworks and model guardrails informed by developmental psychology, cognitive biases, and behavioral neuroscience principles</li>
+<li>Build evaluation protocols and red-teaming artifacts: adversarial testing, escalation logic, autograders, consistency checks with audit trails</li>
+<li>Lead RLHF/RLAIF and DPO strategies for safety fine-tuning; define deployment requirements under safety constraints</li>
+<li>Collaborate with software engineers, product managers, clinical health, and design to integrate psychological insights into shipped experiences</li>
 </ul>
 </div>
 
@@ -266,10 +255,11 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 <span class="item-meta">2022 – 2025</span>
 </div>
 <ul>
-<li>Led 10+ R&D studies building end-to-end multi-sensor pipelines for XR & spatial computing wellbeing experiences</li>
-<li>Contributed to evaluation of shipped experiences (e.g., Mindfulness on Vision Pro) using multimodal streams and perceptual risk assessments</li>
-<li>Built internal tools for dense data synchronization, concatenation, and preprocessing used cross-functionally</li>
-<li>Led sensor benchmarking and ML model development for real-time on-device inference, contributing to product decisions</li>
+<li>Led 10+ R&D studies translating psychological and neuroscience research into technical requirements for XR/spatial computing wellbeing experiences</li>
+<li>Built end-to-end ML models integrating high-frequency multimodal data (EDA, IMU, PPG, respiration, RF, eye-tracking, facial expression, body pose) for cognitive and physiological state inference</li>
+<li>Contributed to perceptual risk assessments and longitudinal evaluations for proposed and shipped experiences (e.g., Mindfulness on Vision Pro)</li>
+<li>Developed internal guidelines for closed-loop adaptive wellbeing interactions grounded in developmental and clinical psychology</li>
+<li>Led sensor benchmarking and ML model development for real-time on-device inference; built cross-functional data synchronization and preprocessing tools</li>
 </ul>
 </div>
 
@@ -280,9 +270,10 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 </div>
 <div class="item-subtitle">Mentor: Ian Gotlib (editor of Handbook of Depression) • NIH F32 & Klingenstein Foundation Fellow</div>
 <ul>
-<li>PI on federally funded grants examining <a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9117398/" target="_blank">dimensional early life stress effects on adolescent brain development</a></li>
+<li>PI on two federally funded grants examining <a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9117398/" target="_blank">dimensional early life stress effects on adolescent brain development</a></li>
 <li>Published influential research on <a class="paper-link" href="https://www.sciencedirect.com/science/article/pii/S2451902220302457" target="_blank">adolescent mental health during COVID-19</a>, featured in <a class="paper-link" href="https://news.stanford.edu/stories/2020/09/covid-19s-mental-toll-teens" target="_blank">Stanford News</a> and national media</li>
-<li>Developed <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/32458453/" target="_blank">precision mental health frameworks</a> for classifying depression subtypes using neuroimaging featured in <a class="paper-link" href="https://www.acamh.org/research-digest/young-peoples-neural-fingerprints-might-permit-a-precision-medicine-approach-to-depression/" target="_blank">Stanford News</a></li>
+<li>Developed <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/32458453/" target="_blank">precision mental health frameworks</a> for classifying depression subtypes using neuroimaging, featured in <a class="paper-link" href="https://www.acamh.org/research-digest/young-peoples-neural-fingerprints-might-permit-a-precision-medicine-approach-to-depression/" target="_blank">ACAMH</a></li>
+<li>Designed and executed longitudinal multimodal studies spanning neuroimaging, neurophysiology, behavior, and self-report in youth cohorts</li>
 </ul>
 </div>
 
@@ -291,10 +282,11 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 <span class="item-title">Pre-Doctoral Clinical Scholar (PhD) — UC Davis Center for Mind & Brain</span>
 <span class="item-meta">2015 – 2019</span>
 </div>
-<div class="item-subtitle">Mentor: Amanda Guyer • Designated Emphasis in Clinical and Translational Neuroscience</div>
+<div class="item-subtitle">Mentor: Amanda Guyer • Designated Emphasis in Clinical and Translational Neuroscience • TL1 Funding</div>
 <ul>
-<li>Pioneered <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/32466823/" target="_blank">predicting depression risk using neural biotypes</a> in adolescents</li>
-<li>Designed longitudinal multimodal studies spanning neuroimaging, behavior, puberty, and development in at-risk youth cohorts</li>
+<li>Pioneered <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/32466823/" target="_blank">predicting depression risk using neural biotypes</a>—foundational precision mental health work</li>
+<li>Designed longitudinal multimodal studies spanning neuroimaging, puberty, behavior, and development in at-risk youth cohorts</li>
+<li>Built reproducible neuroimaging preprocessing and analysis pipelines for large-scale developmental datasets</li>
 </ul>
 </div>
 
@@ -304,36 +296,44 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 <span class="item-meta">2012 – 2015</span>
 </div>
 <ul>
-<li>Co-authored <a class="paper-link" href="https://doi.org/10.1146/annurev-neuro-071714-034054" target="_blank">integrative maturation of cognitive control</a> (Annual Review of Neuroscience)</li>
-<li>Extensively trained in eye-tracking, f/sMRI, MEG, EEG, behavioral paradigms assessing cognitive control and brain development; Developed full preprocessing and analysis pipelines</li>
-<li>Conducted 100+ hrs clinical evaluations (SCID, SIDP) for personality disorders and depression in adolescents and adults</li>
+<li>Co-authored <a class="paper-link" href="https://doi.org/10.1146/annurev-neuro-071714-034054" target="_blank">integrative maturation of cognitive control</a> (Annual Review of Neuroscience)—foundational developmental cognitive neuroscience</li>
+<li>Extensively trained in eye-tracking, f/sMRI, MEG, EEG, and behavioral paradigms; developed full preprocessing and analysis pipelines</li>
+<li>Conducted 100+ hours of clinical evaluations (SCID, SIDP) for personality disorders and depression in adolescents and adults</li>
 </ul>
 </div>
 
 <h2>Skills</h2>
 <div class="skills-grid">
 <div class="skill-row">
-<span class="skill-label">ML/AI:</span>
-<span class="skill-value">PyTorch, CoreML, RNN/LSTM, GAMMs, Markov Regime Switching, RLHF, DPO, RLAIF, NLP, Computer Vision</span>
+<span class="skill-label">AI Safety:</span>
+<span class="skill-value">Red Teaming, Evaluation Design, Safety Fine-tuning, Guardrails, RLHF, DPO, RLAIF, Autograding, Scalable Oversight</span>
 </div>
 <div class="skill-row">
 <span class="skill-label">GenAI:</span>
-<span class="skill-value">GPT, Claude, Gemini, VLMs; Red Teaming, Alignment, Autograding, Safety Evaluation</span>
+<span class="skill-value">GPT, Claude, Gemini, VLMs; Prompt Engineering, Multi-Agent Systems, Alignment Testing, Human-in-the-Loop</span>
+</div>
+<div class="skill-row">
+<span class="skill-label">ML/AI:</span>
+<span class="skill-value">PyTorch, CoreML, RNN/LSTM, GAMMs, Markov Regime Switching, NLP, Computer Vision, On-device Inference</span>
+</div>
+<div class="skill-row">
+<span class="skill-label">Sensing:</span>
+<span class="skill-value">PPG/HRV, EDA, IMU, Eye Tracking, Respiration, Temperature, fMRI, EEG/MEG, HealthKit, SensorKit, ARKit, RF</span>
+</div>
+<div class="skill-row">
+<span class="skill-label">Psychology:</span>
+<span class="skill-value">Developmental, Clinical, Cognitive; Adolescent Mental Health, Risk Assessment, HCI, Ethics, Clinical Interviews</span>
 </div>
 <div class="skill-row">
 <span class="skill-label">Languages:</span>
 <span class="skill-value">Python, R, SQL, Bash, MATLAB</span>
-</div>
-<div class="skill-row">
-<span class="skill-label">Sensing:</span>
-<span class="skill-value">PPG/HRV, EDA, IMU, Eye Tracking, Respiration, Temperature, fMRI, EEG, HealthKit, SensorKit, ARKit, Blendshapes, RF</span>
 </div>
 </div>
 
 <h2>Education</h2>
 <div class="edu-grid">
 <div class="edu-item">
-<div class="edu-degree">NRSA & KLingenstein Postdoctoral Fellow</div>
+<div class="edu-degree">NRSA & Klingenstein Postdoctoral Fellow</div>
 <div class="edu-school">Stanford University</div>
 <div class="edu-mentor">Mentor: Ian Gotlib</div>
 <div class="edu-date">2019 – 2022</div>
@@ -354,7 +354,7 @@ Translational neuroscientist building <strong>multimodal AI-driven wellbeing sys
 
 <h2>Selected Publications</h2>
 <p class="pubs">
-30+ peer-reviewed publications • 1,100+ citations • Outlets include <em>Annual Review of Neuroscience</em>, <em>Journal of Child Psychology and Psychiatry</em>, <em>Development and Psychopathology</em>, <em>Biological Psychiatry: CNNI</em>, <em>Psychological Medicine</em>.
+30+ peer-reviewed publications • 1,100+ citations • Outlets: <em>Annual Review of Neuroscience</em>, <em>Journal of Child Psychology and Psychiatry</em>, <em>Development and Psychopathology</em>, <em>Biological Psychiatry: CNNI</em>, <em>Psychological Medicine</em>.
 Full list: <a href="https://scholar.google.com/citations?user=c5tyozkAAAAJ&hl=en" target="_blank">Google Scholar</a> • <a href="https://orcid.org/0000-0003-0985-5622" target="_blank">ORCID</a>
 </p>
 
